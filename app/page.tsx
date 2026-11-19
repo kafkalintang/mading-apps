@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Sidebar from './components/Sidebar';
 import NoteForm from './components/NoteForm';
 import MadingBoard from './components/MadingBoard';
 
@@ -11,10 +10,7 @@ export interface Note {
   color: string;
 }
 
-export default function MadingApp() {
-  // State untuk menu sidebar
-  const [activeMenu, setActiveMenu] = useState('papan-utama'); 
-  
+export default function PapanUtamaPage() {
   const [notes, setNotes] = useState<Note[]>([
     { id: 1, text: "ITB bukan hanya universitas — itu adalah awal dari cerita hidupmu yang luar biasa", color: "bg-yellow-100" },
     { id: 2, text: "Setiap malam begadang sekarang adalah satu langkah lebih dekat ke toga ITB. Tetap semangat!", color: "bg-pink-100" },
@@ -33,44 +29,16 @@ export default function MadingApp() {
   };
 
   return (
-    <div className="flex min-h-screen bg-gray-100 font-sans">
-      {/* Kirim state activeMenu dan fungsi setter ke Sidebar */}
-      <Sidebar activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
+    <div className="w-full flex flex-col gap-8">
+      {/* Form Catatan Baru */}
+      <div className="w-full">
+        <NoteForm onAddNote={handleAddNote} />
+      </div>
       
-      <main className="flex-1 p-8 flex flex-col gap-8 overflow-y-auto h-screen">
-        
-        {/* TAMPILAN PAPAN UTAMA */}
-        {activeMenu === 'papan-utama' && (
-          <>
-            {/* Form kita bungkus dalam div terpisah */}
-            <div className="w-full">
-              <NoteForm onAddNote={handleAddNote} />
-            </div>
-            
-            {/* Mading dipisah dengan garis atau jarak (gap-8 di parent sudah handle) */}
-            <div className="w-full">
-              <MadingBoard notes={notes} />
-            </div>
-          </>
-        )}
-
-        {/* TAMPILAN CATATAN SAYA */}
-        {activeMenu === 'catatan-saya' && (
-          <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-200 text-center flex flex-col items-center justify-center h-64 text-gray-500">
-            <h2 className="text-xl font-bold text-gray-800 mb-2">Catatan Saya</h2>
-            <p>Halaman ini masih kosong. (Nanti kamu bisa nampilin list catatan di sini).</p>
-          </div>
-        )}
-
-        {/* TAMPILAN PENGATURAN */}
-        {activeMenu === 'pengaturan' && (
-          <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-200 text-center flex flex-col items-center justify-center h-64 text-gray-500">
-            <h2 className="text-xl font-bold text-gray-800 mb-2">Pengaturan</h2>
-            <p>Halaman pengaturan belum dibuat. (Bisa buat atur tema atau profil).</p>
-          </div>
-        )}
-
-      </main>
+      {/* Mading Board */}
+      <div className="w-full">
+        <MadingBoard notes={notes} />
+      </div>
     </div>
   );
 }

@@ -1,15 +1,25 @@
-// app/layout.tsx
-import Sidebar from "./components/Sidebar";
-import "./globals.css";
+import './globals.css';
+import Sidebar from './components/Sidebar';
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export const metadata = {
+  title: 'Mading Kita',
+  description: 'Aplikasi mading sederhana',
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <body className="flex h-screen">
-        {/* Sidebar selalu di kiri */}
-        <Sidebar /> 
-        {/* Konten berubah sesuai URL */}
-        <main className="flex-1 overflow-auto">{children}</main>
+      {/* Tambahkan bg-gray-100 dan text-gray-900 */}
+      <body className="flex min-h-screen bg-gray-100 text-gray-900 font-sans">
+        <Sidebar />
+        
+        <main className="flex-1 p-8 overflow-y-auto h-screen">
+          {children}
+        </main>
       </body>
     </html>
   );
