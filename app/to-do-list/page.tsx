@@ -211,7 +211,7 @@ export default function TodoListPage() {
         <header className="mb-8">
           <h1 className="flex items-center gap-2.5 text-3xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-800 to-indigo-600 md:text-4xl">
             <ClipboardList className="h-8 w-8 text-blue-700" strokeWidth={2.25} />
-            To-Do List
+            To Do List
           </h1>
           <p className="mt-1 flex items-center gap-1.5 text-sm text-gray-500">
             Kelola tugas harianmu biar makin produktif
