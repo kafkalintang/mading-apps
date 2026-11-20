@@ -1,32 +1,22 @@
 import NoteCard from './NoteCard';
-import { LayoutGrid } from 'lucide-react'; // Icon tambahan
+import { Note } from '../utils/storage';
 
-interface Note {
-  id: number;
-  text: string;
-  color: string;
-}
-
-interface MadingBoardProps {
-  notes: Note[];
-}
-
-export default function MadingBoard({ notes }: MadingBoardProps) {
+export default function MadingBoard({ notes }: { notes: Note[] }) {
   return (
-    <div className="flex flex-col gap-4 w-full">
-      {/* Judul Section Papan */}
-      <div className="flex items-center gap-2 text-gray-700 font-bold px-2">
-        <LayoutGrid className="w-5 h-5" />
-        <h2>Papan Utama</h2>
-      </div>
-
-      <div className="bg-[#d4b895] p-6 rounded-2xl shadow-inner min-h-[500px] border-4 border-[#c3a47b]">
-        <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
-          {notes.map((note) => (
-            <NoteCard key={note.id} text={note.text} color={note.color} />
-          ))}
+    // items-start mencegah kertas ikut melar ke bawah
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6 bg-[#d2b48c] rounded-xl shadow-inner min-h-[500px] items-start content-start">
+      
+      {notes.length === 0 ? (
+        <div className="col-span-full flex flex-col items-center justify-center h-64 text-[#8B6508]">
+          <p className="text-lg font-medium">Papan masih kosong...</p>
+          <p className="text-sm opacity-80">Yuk buat catatan baru di menu "Catatan Saya"!</p>
         </div>
-      </div>
+      ) : (
+        notes.map((item) => (
+          <NoteCard key={item.id} note={item} />
+        ))
+      )}
+
     </div>
   );
 }
