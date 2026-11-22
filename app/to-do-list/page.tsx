@@ -37,8 +37,8 @@ const PRIORITY_CONFIG: Record<
 > = {
   high: {
     label: 'Tinggi',
-    badge: 'bg-rose-50 text-rose-600 border-rose-100',
-    dot: 'bg-rose-500',
+    badge: 'bg-red-50 text-red-600 border-red-100',
+    dot: 'bg-red-500',
     order: 0,
   },
   medium: {
@@ -210,7 +210,7 @@ export default function TodoListPage() {
   });
 
   return (
-    <div className="min-h-screen bg-[#f6f8fc] px-4 py-6 text-slate-800 sm:px-6 lg:px-10 lg:py-10">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-sky-50 px-4 py-6 text-slate-800 sm:px-6 lg:px-10 lg:py-10">
       <div className="mx-auto max-w-5xl">
 
         {/* HEADER */}
@@ -230,7 +230,7 @@ export default function TodoListPage() {
             </p>
           </div>
 
-          <div className="flex items-center gap-3 rounded-2xl border border-slate-200/80 bg-white px-4 py-3 shadow-sm">
+          <div className="flex items-center gap-3 rounded-2xl border border-blue-100 bg-white px-4 py-3 shadow-sm">
             <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
               <Calendar className="h-5 w-5" />
             </div>
@@ -242,9 +242,9 @@ export default function TodoListPage() {
         </header>
 
         {/* HERO PROGRESS */}
-        <section className="relative mb-7 overflow-hidden rounded-[28px] bg-gradient-to-br from-blue-700 via-blue-600 to-indigo-600 p-6 text-white shadow-xl shadow-blue-200/50 sm:p-8">
+        <section className="relative mb-7 overflow-hidden rounded-[28px] bg-gradient-to-br from-blue-700 via-blue-600 to-sky-500 p-6 text-white shadow-xl shadow-blue-200/50 sm:p-8">
           <div className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full bg-white/10 blur-2xl" />
-          <div className="pointer-events-none absolute -bottom-24 right-32 h-48 w-48 rounded-full bg-indigo-300/20 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-24 right-32 h-48 w-48 rounded-full bg-sky-200/20 blur-3xl" />
 
           <div className="relative z-10 flex flex-col justify-between gap-8 md:flex-row md:items-center">
             <div className="max-w-md">
@@ -311,7 +311,7 @@ export default function TodoListPage() {
 
         {/* STATS */}
         <section className="mb-7 grid grid-cols-2 gap-4 lg:grid-cols-4">
-          <div className="rounded-2xl border border-slate-200/70 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+          <div className="rounded-2xl border border-blue-100/70 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
             <div className="flex items-center justify-between">
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
                 <ListTodo className="h-5 w-5" />
@@ -322,9 +322,9 @@ export default function TodoListPage() {
             <p className="mt-1 text-sm text-slate-500">Total tugas</p>
           </div>
 
-          <div className="rounded-2xl border border-slate-200/70 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+          <div className="rounded-2xl border border-blue-100/70 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
             <div className="flex items-center justify-between">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-50 text-amber-600">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-sky-50 text-sky-600">
                 <Clock3 className="h-5 w-5" />
               </div>
               <span className="text-xs text-slate-400">Pending</span>
@@ -333,7 +333,7 @@ export default function TodoListPage() {
             <p className="mt-1 text-sm text-slate-500">Tugas aktif</p>
           </div>
 
-          <div className="rounded-2xl border border-slate-200/70 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+          <div className="rounded-2xl border border-blue-100/70 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
             <div className="flex items-center justify-between">
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600">
                 <CircleCheck className="h-5 w-5" />
@@ -344,9 +344,9 @@ export default function TodoListPage() {
             <p className="mt-1 text-sm text-slate-500">Tugas selesai</p>
           </div>
 
-          <div className="rounded-2xl border border-slate-200/70 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+          <div className="rounded-2xl border border-blue-100/70 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
             <div className="flex items-center justify-between">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-rose-50 text-rose-600">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-100 text-blue-700">
                 <Rocket className="h-5 w-5" />
               </div>
               <span className="text-xs text-slate-400">Urgent</span>
@@ -357,7 +357,7 @@ export default function TodoListPage() {
         </section>
 
         {/* ADD TASK */}
-        <section className="mb-7 rounded-[24px] border border-slate-200/70 bg-white p-5 shadow-sm sm:p-6">
+        <section className="mb-7 rounded-[24px] border border-blue-100/70 bg-white p-5 shadow-sm sm:p-6">
           <div className="mb-5">
             <h3 className="text-lg font-bold text-slate-800">Tambah tugas baru</h3>
             <p className="mt-1 text-sm text-slate-400">
@@ -372,7 +372,7 @@ export default function TodoListPage() {
                 value={text}
                 onChange={(e) => setText(e.target.value)}
                 placeholder="Apa yang ingin kamu kerjakan?"
-                className="w-full rounded-xl border border-slate-200 bg-slate-50/70 px-4 py-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-blue-400 focus:bg-white focus:ring-4 focus:ring-blue-50"
+                className="w-full rounded-xl border border-blue-100 bg-blue-50/30 px-4 py-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-blue-400 focus:bg-white focus:ring-4 focus:ring-blue-50"
               />
 
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
@@ -383,11 +383,11 @@ export default function TodoListPage() {
                   <select
                     value={priority}
                     onChange={(e) => setPriority(e.target.value as Priority)}
-                    className="w-full rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm outline-none transition focus:border-blue-400 focus:ring-4 focus:ring-blue-50"
+                    className="w-full rounded-xl border border-blue-100 bg-white px-3 py-3 text-sm outline-none transition focus:border-blue-400 focus:ring-4 focus:ring-blue-50"
                   >
-                    <option value="high">🔴 Tinggi</option>
-                    <option value="medium">🟡 Sedang</option>
-                    <option value="low">🟢 Rendah</option>
+                    <option value="high">Tinggi</option>
+                    <option value="medium">Sedang</option>
+                    <option value="low">Rendah</option>
                   </select>
                 </div>
 
@@ -399,7 +399,7 @@ export default function TodoListPage() {
                     type="date"
                     value={deadline}
                     onChange={(e) => setDeadline(e.target.value)}
-                    className="w-full rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm text-slate-600 outline-none transition focus:border-blue-400 focus:ring-4 focus:ring-blue-50"
+                    className="w-full rounded-xl border border-blue-100 bg-white px-3 py-3 text-sm text-slate-600 outline-none transition focus:border-blue-400 focus:ring-4 focus:ring-blue-50"
                   />
                 </div>
 
@@ -407,7 +407,7 @@ export default function TodoListPage() {
                   <button
                     type="submit"
                     disabled={!text.trim()}
-                    className="flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-100 transition hover:bg-blue-700 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40 disabled:shadow-none"
+                    className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-sky-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-100 transition hover:from-blue-700 hover:to-sky-600 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40 disabled:shadow-none"
                   >
                     <Plus className="h-4 w-4" />
                     Tambah tugas
@@ -418,9 +418,8 @@ export default function TodoListPage() {
           </form>
         </section>
 
-        {/* TASK LIST SECTION */}
-        <section className="rounded-[24px] border border-slate-200/70 bg-white p-5 shadow-sm sm:p-6">
-          {/* LIST HEADER */}
+        {/* TASK LIST */}
+        <section className="rounded-[24px] border border-blue-100/70 bg-white p-5 shadow-sm sm:p-6">
           <div className="mb-5 flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
             <div>
               <h3 className="text-lg font-bold text-slate-800">Daftar tugas</h3>
@@ -439,7 +438,7 @@ export default function TodoListPage() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Cari tugas..."
-                className="w-full rounded-xl border border-slate-200 bg-slate-50/70 py-3 pl-10 pr-4 text-sm outline-none transition focus:border-blue-400 focus:bg-white focus:ring-4 focus:ring-blue-50"
+                className="w-full rounded-xl border border-blue-100 bg-blue-50/30 py-3 pl-10 pr-4 text-sm outline-none transition focus:border-blue-400 focus:bg-white focus:ring-4 focus:ring-blue-50"
               />
               {query && (
                 <button
@@ -454,7 +453,7 @@ export default function TodoListPage() {
 
           {/* FILTER */}
           <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
-            <div className="flex rounded-xl bg-slate-100 p-1">
+            <div className="flex rounded-xl bg-blue-50 p-1">
               {(['all', 'active', 'done'] as Filter[]).map((f) => (
                 <button
                   key={f}
@@ -480,7 +479,7 @@ export default function TodoListPage() {
             {stats.done > 0 && (
               <button
                 onClick={clearDone}
-                className="inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs font-semibold text-rose-500 transition hover:bg-rose-50"
+                className="inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs font-semibold text-red-500 transition hover:bg-red-50"
               >
                 <Trash2 className="h-3.5 w-3.5" />
                 Hapus selesai
@@ -491,8 +490,8 @@ export default function TodoListPage() {
           {/* TASKS */}
           <ul className="flex flex-col gap-3">
             {visibleTodos.length === 0 && (
-              <li className="rounded-2xl border border-dashed border-slate-200 bg-slate-50/50 px-4 py-14 text-center">
-                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-blue-500">
+              <li className="rounded-2xl border border-dashed border-blue-200 bg-blue-50/30 px-4 py-14 text-center">
+                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-100 text-blue-600">
                   <ClipboardList className="h-7 w-7" />
                 </div>
                 <p className="font-semibold text-slate-700">Belum ada tugas</p>
@@ -516,8 +515,8 @@ export default function TodoListPage() {
                     todo.done
                       ? 'border-slate-100 bg-slate-50/70'
                       : overdue
-                      ? 'border-rose-100 bg-white hover:border-rose-200 hover:shadow-sm'
-                      : 'border-slate-100 bg-white hover:border-blue-100 hover:shadow-sm'
+                      ? 'border-red-100 bg-white hover:border-red-200 hover:shadow-sm'
+                      : 'border-blue-50 bg-white hover:border-blue-100 hover:shadow-sm'
                   }`}
                 >
                   {/* CHECK */}
@@ -527,7 +526,7 @@ export default function TodoListPage() {
                     className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-2 transition ${
                       todo.done
                         ? 'border-emerald-500 bg-emerald-500 text-white'
-                        : 'border-slate-300 hover:border-blue-500 hover:bg-blue-50'
+                        : 'border-blue-200 hover:border-blue-500 hover:bg-blue-50'
                     }`}
                   >
                     {todo.done && <Check className="h-3.5 w-3.5" strokeWidth={3} />}
@@ -556,7 +555,7 @@ export default function TodoListPage() {
                           </button>
                           <button
                             onClick={cancelEdit}
-                            className="rounded-xl bg-slate-100 px-4 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-200"
+                            className="rounded-xl bg-blue-50 px-4 py-2 text-xs font-semibold text-slate-600 hover:bg-blue-100"
                           >
                             Batal
                           </button>
@@ -586,8 +585,8 @@ export default function TodoListPage() {
                             <span
                               className={`inline-flex items-center gap-1.5 rounded-lg border px-2.5 py-1 text-[11px] font-medium ${
                                 overdue
-                                  ? 'border-rose-100 bg-rose-50 text-rose-600'
-                                  : 'border-slate-100 bg-slate-50 text-slate-500'
+                                  ? 'border-red-100 bg-red-50 text-red-600'
+                                  : 'border-blue-100 bg-blue-50/50 text-slate-500'
                               }`}
                             >
                               <Calendar className="h-3 w-3" />
@@ -621,7 +620,7 @@ export default function TodoListPage() {
                       <button
                         onClick={() => deleteTodo(todo.id)}
                         aria-label="Hapus"
-                        className="rounded-xl p-2 text-slate-400 transition hover:bg-rose-50 hover:text-rose-500"
+                        className="rounded-xl p-2 text-slate-400 transition hover:bg-red-50 hover:text-red-500"
                       >
                         <Trash2 className="h-4 w-4" />
                       </button>
@@ -632,13 +631,13 @@ export default function TodoListPage() {
             })}
           </ul>
 
-          {/* LIST FOOTER */}
+          {/* FOOTER LIST */}
           {stats.total > 0 && (
-            <div className="mt-5 flex items-center justify-between border-t border-slate-100 pt-4">
+            <div className="mt-5 flex items-center justify-between border-t border-blue-50 pt-4">
               <p className="text-xs text-slate-400">
                 Menampilkan {visibleTodos.length} dari {stats.total} tugas
               </p>
-              <p className="text-xs font-medium text-emerald-600">
+              <p className="text-xs font-medium text-blue-600">
                 {stats.done} selesai
               </p>
             </div>
@@ -651,7 +650,7 @@ export default function TodoListPage() {
             <Lock className="h-3.5 w-3.5" />
             Data tersimpan otomatis di browser kamu
           </p>
-          <p className="text-[11px] text-slate-300">
+          <p className="text-[11px] text-blue-300">
             Make today count.
           </p>
         </footer>
